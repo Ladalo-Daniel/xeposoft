@@ -17,7 +17,7 @@ export default function IntroSection() {
             <strong className=' text-yellow-600'>Welcome to Xeposoft</strong>, we are a software development company that helps you build and develops web and mobile based software applications.
             </p>
             <p className="dark:text-gray-300 text-slate-900 max-w-xl leading-relaxed sm:mx-auto lg:ml-0">
-            We are trusted by businesses, in that we've helped businesses to scale with our software solutions tailored to the business needs.
+            We are trusted by businesses, in that we&apos;ve helped businesses to scale with our software solutions tailored to the business needs.
             </p>
             <div className="pt-10 items-center justify-center space-y-3 sm:space-x-6 sm:space-y-0 sm:flex lg:justify-start">
                 <ButtonGroup />

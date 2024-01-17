@@ -40,7 +40,7 @@ function TeamSection() {
                         Meet our team
                     </h3>
                     <p className="text-slate-700 dark:text-slate-100 mt-3">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy.
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry&apos;s standard dummy.
                     </p>
                 </div>
                 <div className="mt-12">
