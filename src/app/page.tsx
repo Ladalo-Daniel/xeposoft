@@ -4,6 +4,10 @@ import TopNavBar from '@/components/TopNavBar'
 import ServicesSection from '@/components/home/ServicesSection'
 import IntroSection from '@/components/home/IntroSection'
 import SolutionsSection from '@/components/home/SolutionsSection'
+import TestimonialSection from '@/components/home/TestimonialSection'
+import ClientSection from '@/components/home/ClientSection'
+import TeamSection from '@/components/home/TeamSection'
+import ArticleSection from '@/components/home/ArticleSection'
 
 export default function Home() {
   return (
@@ -13,6 +17,10 @@ export default function Home() {
          <IntroSection />
          <ServicesSection />
          <SolutionsSection />
+         <TestimonialSection />
+         <ClientSection />
+         <TeamSection />
+         <ArticleSection />
          {/* ABOUT === VALUES === CULTURE === MISSION */}
          {/* WHAT WE DO === FEATURES */}
          {/* PRODUCTS */}

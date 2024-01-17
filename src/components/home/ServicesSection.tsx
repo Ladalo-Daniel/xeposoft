@@ -6,7 +6,7 @@ import React from 'react'
 const services = [
     {
         name: "Web Development",
-        description: "Take exciting quizzes from your institution tailored to your taste. You are in control of how you want to answer it.",
+        description: "Web development service is the core of our business. We provide various website design to suite our client's needs.",
         Icon: BookCheckIcon
     },
     {   
@@ -39,8 +39,8 @@ const FeaturesSection = () => {
                         <h2 className='text-yellow-600 py-2'>
                             {feature.name}
                         </h2>
-                        <p className='text-primary mr-2 py-2'>
-                            <feature.Icon size={18} className='text-primary' />
+                        <p className='text-white mr-2 p-2 bg-yellow-700 rounded-full'>
+                            <feature.Icon size={24} className='text-white text-5xl' />
                         </p>
                     </CardHeader>
                     <CardBody>

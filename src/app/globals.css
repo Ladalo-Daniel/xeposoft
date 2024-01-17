@@ -76,6 +76,12 @@
 }
 
 
+.leftsidebar {
+  @apply hidden md:flex px-6 pb-10 flex-col justify-between min-w-[270px] overflow-auto;
+
+}
+
+
 
 
 /* Animation Section*/

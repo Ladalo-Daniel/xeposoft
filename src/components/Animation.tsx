@@ -1,3 +1,5 @@
+"use client"
+
 import React, { useEffect, useRef, ReactNode } from "react";
 
 interface InViewProps {
