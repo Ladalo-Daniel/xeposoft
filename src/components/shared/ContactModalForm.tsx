@@ -24,7 +24,7 @@ export function ContactModalForm() {
         <DialogHeader>
           <DialogTitle>Contact us</DialogTitle>
           <DialogDescription>
-            We're active to here what you want us to do for you
+            We&apos;re active to here what you want us to do for you
           </DialogDescription>
         </DialogHeader>
         <ContactForm />

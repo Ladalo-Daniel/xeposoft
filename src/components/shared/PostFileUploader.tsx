@@ -22,7 +22,7 @@ function PostFileUploader({ fieldChange, mediaUrl, isProfile }: propTypes) {
         setFile(acceptedFiles)
         fieldChange(acceptedFiles)
         setFileUrl(URL.createObjectURL(acceptedFiles[0]))
-    }, [file])
+    }, [fieldChange])
 
     const {getRootProps, getInputProps} = useDropzone({
         onDrop,
