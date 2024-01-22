@@ -3,6 +3,8 @@ import { getProfile, updateProfile } from "../../../supabase/user";
 import { QUERY_KEYS } from "./utils";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
+import { createUpdateBlog, getBlogsByQuery } from "../../../supabase/blogs";
+import { string } from "zod";
 
 
 const queryClient = new QueryClient()
@@ -35,6 +37,36 @@ export const useUpdateProfile = () => {
             toast.error("Sorry, an error occured while we were trying to update your profile... but hang on, let us give it another shot. " + message)
             return
         }
+    })
+}
+
+
+
+export const useCreateUpdateBlog = () => {
+    const router = useRouter()
+
+    return useMutation({
+        mutationFn: ({blogId, image, ...rest}: {blogId: string, image?: File[]}) => createUpdateBlog({blogId, image, ...rest}),
+        mutationKey: [QUERY_KEYS.create_update_blog_data],
+        onSuccess: ()=> {
+            queryClient.invalidateQueries({
+                queryKey: [QUERY_KEYS.create_update_blog_data],
+            })
+            router.refresh();
+        },
+        onError: (error) => {
+            toast.error(error.message)
+        }
+    })
+}
+
+
+
+export const useGetBlogsByQuery = ({column, row, range}: {column: "author" | "id" | "tags" | "title", row: string, range?:number}) => {
+    return useQuery({
+        queryKey: [QUERY_KEYS.get_blogs],
+        queryFn: () => getBlogsByQuery(column, row, range),
+        enabled:true
     })
 }
 

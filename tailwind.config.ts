@@ -11,7 +11,7 @@ const config = {
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
 
-    './node_modules/@nextui-org/theme/dist/components/(button|input|avatar|card).js',
+    './node_modules/@nextui-org/theme/dist/components/(button|input|avatar|card|accordion).js',
 	],
   prefix: "",
   theme: {

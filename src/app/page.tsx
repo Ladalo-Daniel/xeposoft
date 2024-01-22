@@ -8,6 +8,7 @@ import TestimonialSection from '@/components/home/TestimonialSection'
 import ClientSection from '@/components/home/ClientSection'
 import TeamSection from '@/components/home/TeamSection'
 import ArticleSection from '@/components/home/ArticleSection'
+import FaqsSection from '@/components/home/FaqsSection'
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
          <TestimonialSection />
          <ClientSection />
          <TeamSection />
+         <FaqsSection />
          <ArticleSection />
          {/* ABOUT === VALUES === CULTURE === MISSION */}
          {/* WHAT WE DO === FEATURES */}

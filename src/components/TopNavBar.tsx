@@ -3,6 +3,7 @@ import Link from 'next/link'
 import React from 'react'
 import { Button } from './ui/button'
 import { ModeToggle } from './ModeToggle'
+import { ContactModalForm } from './shared/ContactModalForm'
 
 function TopNavBar() {
   const navigation = [
@@ -27,7 +28,7 @@ function TopNavBar() {
       </div>
       <div className=' flex items-center text-slate-800 flex-row gap-2'>
         <ModeToggle />
-        <Button variant="secondary">Contact us</Button>
+        <ContactModalForm />
       </div>
     </nav>
   )
