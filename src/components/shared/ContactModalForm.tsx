@@ -20,10 +20,10 @@ export function ContactModalForm() {
       <DialogTrigger asChild>
         <Button variant="secondary">Contact us</Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[600px]">
+      <DialogContent className="md:max-w-[600px] w-[90vw] rounded-md dark:ring-1">
         <DialogHeader>
-          <DialogTitle>Contact us</DialogTitle>
-          <DialogDescription>
+          <DialogTitle className=" text-4xl text-yellow-700 text-center">Contact us</DialogTitle>
+          <DialogDescription className=" text-center">
             We&apos;re active to here what you want us to do for you
           </DialogDescription>
         </DialogHeader>

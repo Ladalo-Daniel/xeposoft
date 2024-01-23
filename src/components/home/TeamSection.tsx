@@ -7,7 +7,7 @@ import { Card } from '../ui/card'
 function TeamSection() {
     const team = [
         {
-            avatar: "/images/lad5.jpeg",
+            avatar: "/images/pic2.jpg",
             name: "Ladalo Daniel",
             title: "Software Engineer",
             desc: "Lorem Ipsum is simply dummy text of the printing and typesettin industry.",
@@ -23,7 +23,7 @@ function TeamSection() {
             twitter: "javascript:void(0)",
         },
         {
-            avatar: "/images/lad5.jpeg",
+            avatar: "/images/contact.jpg",
             name: "Nehemiah Justice",
             title: "Full stack engineer",
             desc: "Lorem Ipsum is simply dummy text of the printing and typesettin industry.",
