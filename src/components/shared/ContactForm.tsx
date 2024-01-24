@@ -19,7 +19,7 @@ export default function ContactForm() {
             <Label htmlFor="name" className="text-right">
               Name
             </Label>
-            <Input id="name" name='name' placeholder="name" className="col-span-3" />
+            <Input id="name" name='name' placeholder="your name" className="col-span-3" required={true} />
             <ValidationError 
             prefix="Name" 
             field="name"
@@ -30,7 +30,7 @@ export default function ContactForm() {
             <Label htmlFor="number" className="text-right">
               Phone Number
             </Label>
-            <Input id="number" name='number' placeholder="your phone number" className="col-span-3" />
+            <Input id="number" name='number' placeholder="your phone number" className="col-span-3" required={true} />
             <ValidationError 
             prefix="Phone Number" 
             field="number"
@@ -41,7 +41,7 @@ export default function ContactForm() {
             <Label htmlFor="email" className="text-right">
               Email
             </Label>
-            <Input id="email" name='email' placeholder="your email" className="col-span-3" />
+            <Input id="email" name='email' placeholder="your email" className="col-span-3" required={true} />
             <ValidationError 
             prefix="Email" 
             field="text"
@@ -52,7 +52,7 @@ export default function ContactForm() {
             <Label htmlFor="text" className="text-right">
               Message
             </Label>
-            <Textarea id="message"  name='message' placeholder="message" className="col-span-3 h-9" />
+            <Textarea id="message"  name='message' placeholder="start typing your message" className="col-span-3 h-24 md:h-36" required={true} />
             <ValidationError 
             prefix="Message" 
             field="message"

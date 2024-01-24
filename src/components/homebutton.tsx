@@ -4,6 +4,7 @@ import { Button } from '@nextui-org/button';
 import React, { useEffect, useState } from 'react';
 import VisibilitySensor from 'react-visibility-sensor';
 import { buttonVariants } from './ui/button';
+import { ContactModalForm } from './shared/ContactModalForm';
 
 export default function ButtonGroup() {
   const [isVisible, setIsVisible] = useState(false);
@@ -49,9 +50,7 @@ export default function ButtonGroup() {
         <Button variant='bordered' className={buttonVariants({ variant: 'link' })} color='primary'>
           Learn more
         </Button>
-        <Button variant='bordered' className='' color='warning'>
-          Contact us
-        </Button>
+        <ContactModalForm />
       </div>
       <div className=''>
         <ul className='flex flex-row gap-2 items-center justify-start md:flex-row flex-wrap md:flex-nowrap'>

@@ -1,48 +1,55 @@
-import { Card } from '@nextui-org/card'
-import Image from 'next/image'
-import Link from 'next/link'
-import React from 'react'
-import { getBlogs } from '../../../supabase/blogs'
-import { AspectRatio } from '../ui/aspect-ratio'
 
-const ArticleSection = async () => {
-    const articles = await getBlogs()
-    
-  return (
-    <section id='products' className="py-14">
-        <div className="max-w-screen-xl mx-auto px-4 md:px-8">
-            <div className="max-w-xl">
-                <h3 className="text-2xl hover:underline py-2 transition-all text-primary text-yellow-700">
-                    Our Articles
-                </h3>
-            </div>
-            <div className="mt-7">
-              <ul className="grid gap-8 lg:grid-cols-3">
-                 {
-                    articles?.data?.map((item, idx) => (
-                     <Card key={idx} className="gap-8 h-[400px] sm:flex p-4 dark:bg-background ring-1 ring-slate-300 dark:ring-slate-600 hover:dark:ring-slate-800 hover:ring-slate-400">
-                        <AspectRatio ratio={16/9} className="">
-                            <Image
-                                src={item?.image_url as string}
-                                fill
-                                quality={100}
-                                className=" object-cover shadow-md rounded-xl"
-                                alt=""
-                            />
-                        </AspectRatio>
-                        <div className="mt-4 sm:mt-0">
-                            <Link href="#" className="text-lg text-slate-700 dark:text-slate-100 font-semibold">{item?.title}</Link>
-                            <p className="text-indigo-500">{item?.tags}</p>
-                            <p className="text-slate-600 dark:text-slate-100 mt-2">{item?.content?.slice(0, 80) + " " + "Read more..."}</p>
-                        </div>
-                     </Card>
-                  ))
-                 }
-              </ul>
-            </div>
-          </div>
-        </section>
-  )
-}
+'use client'
 
-export default ArticleSection
+import * as React from "react"
+
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
+import { useGetRecentBlogs } from "@/lib/react-query"
+import { Card, CardHeader } from "@nextui-org/card"
+import { MoveRight } from "lucide-react"
+import { Button } from "@nextui-org/button"
+import Link from "next/link"
+import BlogItem from "../shared/BlogItem"
+
+export default function BlogSection() {
+  const { data: blogs, isPending } = useGetRecentBlogs(4)
+
+    return (
+      <Carousel className="max-sm:max-w-sm max-md:max-w-md py-14">
+        <h1 className=' text-yellow-700 text-3xl font-semibold sm:text-4xl text-center py-9'>Our Blog</h1>
+        <CarouselContent className="-ml-1">
+          {blogs?.data.map(blog => (
+            <CarouselItem key={blog.id} className="pl-1 md:basis-1/2 lg:basis-1/3">
+              <div className="p-1">
+                <BlogItem blog={blog} />
+              </div>
+            </CarouselItem>
+          ))}
+          <CarouselItem key={'s-mor'} className="pl-1 md:basis-1/2 lg:basis-1/3">
+              <div className="p-1 my-auto">
+              <Card className='bg-gradient hover:opacity-60 hover:animate-in cursor-pointer shadow-none rounded-none from-green-950 to-zinc-800 justify-center flex items-center'
+                >
+                    <CardHeader className='flex items-center justify-between' as={Link} href={'/blogs'}>
+                      <Button variant="flat" className="flex gap-1" color="success">
+                        See more <MoveRight  size={18}/>
+                      </Button>
+                    </CardHeader>
+                </Card>
+              </div>
+            </CarouselItem>
+        </CarouselContent>
+        <CarouselPrevious />
+        <CarouselNext />
+      </Carousel>
+    ) 
+  }
+
+  
+
+

@@ -3,7 +3,7 @@ import { getProfile, updateProfile } from "../../../supabase/user";
 import { QUERY_KEYS } from "./utils";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
-import { createUpdateBlog, getBlogsByQuery } from "../../../supabase/blogs";
+import { createUpdateBlog, getBlogsByQuery, getRecentBlogs } from "../../../supabase/blogs";
 import { string } from "zod";
 
 
@@ -67,6 +67,14 @@ export const useGetBlogsByQuery = ({column, row, range}: {column: "author" | "id
         queryKey: [QUERY_KEYS.get_blogs],
         queryFn: () => getBlogsByQuery(column, row, range),
         enabled:true
+    })
+}
+
+export const useGetRecentBlogs = (range:number) => {
+    return useQuery({
+        queryKey:[QUERY_KEYS.get_blogs, range],
+        queryFn: () => getRecentBlogs(range),
+        enabled: true
     })
 }
 
