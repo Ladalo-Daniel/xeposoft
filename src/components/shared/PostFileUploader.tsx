@@ -58,7 +58,7 @@ function PostFileUploader({ fieldChange, mediaUrl, isProfile }: propTypes) {
                     size='lg'
                     className={'w-28 h-28 object-cover cursor-pointer'}
                 />) :
-                <div className='w-full flex mx-auto justify-center items-center'>
+                <div className='w-full flex mx-auto justify-center items-center text-yellow-600'>
                   {!isProfile && 
                   <div>
                     <Image
@@ -68,8 +68,8 @@ function PostFileUploader({ fieldChange, mediaUrl, isProfile }: propTypes) {
                         width={50}
                         height={50}
                     />
-                    <h3 className='base-medium text-muted m-2'>Drag/Upload files</h3>
-                    <p className='small-regular mb-6 text-muted'>SVG, PNG, JPG, JPEG</p>
+                    <h3 className='base-medium  m-2'>Drag/Upload files</h3>
+                    <p className='small-regular mb-6 t'>SVG, PNG, JPG, JPEG</p>
                     <Button className='' variant={'ghost'}>Select from computer</Button>
                   </div>
                   }

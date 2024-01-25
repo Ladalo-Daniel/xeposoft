@@ -3,9 +3,14 @@ import LeftSidebar from './components/LeftSidebar'
 import TopNavbar from './components/TopNavbar'
 import Loading from './loading'
 import { User, getProfile } from '../../../supabase/user'
+import { redirect } from 'next/navigation'
 
 const Layout = async ({ children }: { children: React.ReactNode }): Promise<React.JSX.Element> => {
   const profile = await getProfile()
+  if(!profile){
+    redirect("/sign-up")
+  }
+
   return (
     <Suspense fallback={<Loading />}>
     <div className='w-full bg-dark-1 md:flex relative'>

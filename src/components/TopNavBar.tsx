@@ -6,15 +6,21 @@ import React from 'react'
 import { Button } from './ui/button'
 import { ModeToggle } from './ModeToggle'
 import { ContactModalForm } from './shared/ContactModalForm'
+import { useGetProfile } from '@/lib/react-query'
 
-function TopNavBar() {
+ function TopNavBar() {
+   
   const navigation = [
     { title: "Home", sectionId: "#intro" },
     { title: "About", sectionId: "#about" },
     { title: "Services", sectionId: "#services" },
     { title: "Products", sectionId: "#products" },
     { title: "Blog", sectionId: "#blog" },
+    { title: "Admin", sectionId: "/dashboard" },
+    // { title: "Sign-up", sectionId: "/sign-up" },
 ]
+
+
 
 
 // const smoothScrollTo = (targetId: string) => {

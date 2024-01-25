@@ -39,6 +39,20 @@ export const getProfile = async() => {
 }
 
 
+export const getProfileById =async (userId:string) => {
+    const {data, error} = await supabaseClient.from("users").select()
+      .eq("id", userId)
+      .single()
+
+      if(error) {
+        console.log(error)
+        return { data: null, error}
+      }
+
+      return { data, error}
+}
+
+
 export const updateProfile =async ({ userId, avatar, ...rest}: { userId: string, avatar?: File[] | string}) => {
 
     try {

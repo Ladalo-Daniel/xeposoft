@@ -23,7 +23,7 @@ export function ContactModalForm() {
       </DialogTrigger>
       <DialogContent className="md:max-w-[600px] w-[90vw] rounded-md">
         <DialogHeader>
-          <DialogTitle className=" text-4xl text-yellow-700 text-center">Contact us</DialogTitle>
+          <DialogTitle className=" text-4xl text-yellow-600 text-center">Contact us</DialogTitle>
           <DialogDescription className=" text-center">
             We&apos;re active to here what you want us to do for you
           </DialogDescription>

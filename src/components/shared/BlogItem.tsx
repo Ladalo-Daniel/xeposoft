@@ -8,7 +8,7 @@ import Markdown from 'react-markdown'
 
 function BlogItem({blog}: {blog: Blog}) {
   return (
-    <Card className='bg-gradient hover:opacity-60 h-[500px] hover:animate-in cursor-pointer from-green-950 to-zinc-800' key={blog?.id} 
+    <Card className='bg-gradient hover:opacity-60 h-[400px] hover:animate-in cursor-pointer from-green-950 to-zinc-800' key={blog?.id} 
     >
         <CardHeader className='flex items-center justify-between'>
             <AspectRatio ratio={16/9} className='bg-muted'>

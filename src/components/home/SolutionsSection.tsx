@@ -2,6 +2,7 @@ import { Card } from '@nextui-org/card'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
+import SlideUp from '../Animation'
 
 function SolutionsSection() {
     const solutions = [
@@ -45,6 +46,7 @@ function SolutionsSection() {
               <ul className="grid gap-8 lg:grid-cols-2">
                  {
                     solutions.map((item, idx) => (
+                    <SlideUp>
                      <Card key={idx} className="gap-8 sm:flex p-4 dark:bg-background ring-1 ring-slate-300 dark:ring-slate-600 hover:dark:ring-slate-800 hover:ring-slate-400">
                         <div className="w-full">
                             <Image
@@ -54,7 +56,7 @@ function SolutionsSection() {
                                 quality={100}
                                 className="w-full h-full object-cover object-center shadow-md rounded-xl"
                                 alt=""
-                            />
+                                />
                         </div>
                         <div className="mt-4 sm:mt-0">
                             <h4 className="text-lg text-slate-700 dark:text-slate-100 font-semibold">{item.name}</h4>
@@ -62,6 +64,7 @@ function SolutionsSection() {
                             <p className="text-slate-600 dark:text-slate-100 mt-2">{item.desc}</p>
                         </div>
                      </Card>
+                    </SlideUp>
                   ))
                  }
               </ul>

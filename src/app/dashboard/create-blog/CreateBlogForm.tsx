@@ -16,6 +16,7 @@ import { z } from "zod"
 import { BlogSchema } from "@/lib/validators/blogs"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { toast } from "sonner"
+import { Card } from "@/components/ui/card"
 
 const CreateBlogForm = ({session, blog}: {blog?:Blog ,session?: Pick<Session, "user">}) => {
 
@@ -51,7 +52,7 @@ const CreateBlogForm = ({session, blog}: {blog?:Blog ,session?: Pick<Session, "u
     }
 
   return (
-    <div className="">
+    <Card className=" p-7 md:p-40 bg-slate-200 text-yellow-600 ring-1 ring-slate-300 border-none">
         <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
                 <FormField
@@ -119,10 +120,10 @@ const CreateBlogForm = ({session, blog}: {blog?:Blog ,session?: Pick<Session, "u
                     </FormItem>
                 )}
                 />
-                <Button variant="flat" color="primary" type="submit" isLoading={isPending}>Submit</Button>
+                <Button variant="flat" color="primary" className=" bg-yellow-600 text-white w-full" type="submit" isLoading={isPending}>Submit</Button>
             </form>
         </Form>
-    </div>
+    </Card>
   )
 }
 

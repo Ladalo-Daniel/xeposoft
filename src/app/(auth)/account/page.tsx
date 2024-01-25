@@ -3,10 +3,14 @@ import { getUserSession } from '../../../../supabase/session'
 import { getProfile } from '../../../../supabase/user'
 import MaxWrapper from '@/components/MaxWrapper'
 import { Card } from '@/components/ui/card'
+import { redirect } from 'next/navigation'
 
 export default async function Account() {
   const session = await getUserSession()
   const profile = await getProfile()
+
+  if (profile?.data?.onboarded) redirect("/dashboard")
+  if (!session?.user) redirect("/sign-up")
 
   return <MaxWrapper noOverflow className='flex flex-col gap-3 max-w-5xl'> 
           <Card className='max-w-[600px] mx-auto p-9'>

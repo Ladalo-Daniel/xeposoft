@@ -31,7 +31,7 @@ const AllBlogsSection = async () => {
                             />
                         </AspectRatio>
                         <div className="mt-4 sm:mt-0">
-                            <Link href="#" className="text-lg text-slate-700 dark:text-slate-100 font-semibold">{item?.title}</Link>
+                            <Link href={`/blogs/${item.id}`} className="text-lg text-slate-700 dark:text-slate-100 font-semibold">{item?.title}</Link>
                             <p className="text-indigo-500">{item?.tags}</p>
                             <p className="text-slate-600 dark:text-slate-100 mt-2">{item?.content?.slice(0, 80) + " " + "Read more..."}</p>
                         </div>

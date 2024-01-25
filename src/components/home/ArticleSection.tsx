@@ -21,7 +21,7 @@ export default function BlogSection() {
   const { data: blogs, isPending } = useGetRecentBlogs(4)
 
     return (
-      <Carousel className="max-sm:max-w-sm max-md:max-w-md py-14">
+      <Carousel id="blog" className="max-sm:max-w-sm max-md:max-w-md py-14">
         <h1 className=' text-yellow-700 text-3xl font-semibold sm:text-4xl text-center py-9'>Our Blog</h1>
         <CarouselContent className="-ml-1">
           {blogs?.data.map(blog => (
@@ -36,7 +36,7 @@ export default function BlogSection() {
               <Card className='bg-gradient hover:opacity-60 hover:animate-in cursor-pointer shadow-none rounded-none from-green-950 to-zinc-800 justify-center flex items-center'
                 >
                     <CardHeader className='flex items-center justify-between' as={Link} href={'/blogs'}>
-                      <Button variant="flat" className="flex gap-1" color="success">
+                      <Button variant="solid" className="flex gap-1 bg-yellow-600 text-white" color="success">
                         See more <MoveRight  size={18}/>
                       </Button>
                     </CardHeader>
