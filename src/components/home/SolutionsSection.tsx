@@ -46,7 +46,7 @@ function SolutionsSection() {
               <ul className="grid gap-8 lg:grid-cols-2">
                  {
                     solutions.map((item, idx) => (
-                    <SlideUp>
+                    <SlideUp key={idx}>
                      <Card key={idx} className="gap-8 sm:flex p-4 dark:bg-background ring-1 ring-slate-300 dark:ring-slate-600 hover:dark:ring-slate-800 hover:ring-slate-400">
                         <div className="w-full">
                             <Image
