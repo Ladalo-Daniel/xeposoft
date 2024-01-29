@@ -7,8 +7,10 @@ import { Button } from './ui/button'
 import { ModeToggle } from './ModeToggle'
 import { ContactModalForm } from './shared/ContactModalForm'
 import { useGetProfile } from '@/lib/react-query'
-
+import HomeMobileMenu from './home/HomeMobileMenu'
+ 
  function TopNavBar() {
+  
    
   const navigation = [
     { title: "Home", sectionId: "#intro" },
@@ -36,7 +38,8 @@ import { useGetProfile } from '@/lib/react-query'
 
   return (
     <nav className=' bg-white dark:bg-slate-300 h-[60px] md:px-20 px-4 flex justify-between items-center sticky top-0 border-b-1 border-slate-800 z-50'>
-       <Link href={'/'} className={'inline-block'}>
+      <HomeMobileMenu />
+       <Link href={'/'} className={' hidden md:block'}>
         <Image src={'/images/logot2.png'} width={150} height={150} quality={100} alt="logo" />
       </Link>
       <div className=' hidden  md:block items-center text-slate-800'>

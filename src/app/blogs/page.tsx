@@ -3,7 +3,8 @@ import TopNavBar from '@/components/TopNavBar'
 import React from 'react'
 import AllBlogsSection from './AllBlogsComponent'
 
-function AllBlogPage() {
+async function AllBlogPage() {
+  
   return (
     <main> 
         <TopNavBar />
