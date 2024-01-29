@@ -25,10 +25,11 @@ const TopNavbar = async () => {
 
       
       <div className='md:flex items-center gap-3 hidden'>
-        <ModeToggle />
         <Link href={'/dashboard/profile'} className='hidden md:block'>
           <Avatar src={profile?.data?.image_url || ""} name={profile?.data?.username || ""} color='primary' />
         </Link>
+        <h1 className=' text-slate-800'>Hello, Welcome {profile?.data?.first_name} {profile?.data?.last_name}</h1>
+        <ModeToggle />
         <form action={'/auth/signout'} method='post' className='hidden md:block'>
           <Button className={'items-center flex  gap-2'} variant={'outline'} size={'sm'} type='submit'>
             <span>Sign Out</span>
