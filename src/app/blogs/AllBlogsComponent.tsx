@@ -2,11 +2,11 @@ import { Card } from '@nextui-org/card'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import { getBlogs } from '../../../supabase/blogs'
+import { BlogList, getBlogs } from '../../../supabase/blogs'
 import { AspectRatio } from '@/components/ui/aspect-ratio'
 
-const AllBlogsSection = async () => {
-    const articles = await getBlogs()
+const AllBlogsSection = async ({articles}:{articles: BlogList}) => {
+    // const articles = await getBlogs()
     
   return (
     <section id='products' className="py-14">
@@ -19,7 +19,7 @@ const AllBlogsSection = async () => {
             <div className="mt-7">
               <ul className="grid gap-8 lg:grid-cols-3">
                  {
-                    articles?.data?.map((item, idx) => (
+                    articles?.map((item, idx) => (
                      <Card key={idx} className="gap-8 h-[400px] sm:flex p-4 dark:bg-background ring-1 ring-slate-300 dark:ring-slate-600 hover:dark:ring-slate-800 hover:ring-slate-400">
                         <AspectRatio ratio={16/9} className="">
                             <Image
