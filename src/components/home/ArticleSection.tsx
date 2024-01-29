@@ -58,6 +58,7 @@ export default function BlogSection() {
   if (!isDesktop) {
     return (
       <div className="flex flex-col gap-3">
+        <h1 className=' text-yellow-700 text-3xl font-semibold sm:text-4xl text-center py-3'>Our Blog</h1>
        {blogs?.data.map(blog => (
             <div key={blog.id} className="pl-1 md:basis-1/2 lg:basis-1/3">
               <div className="p-1">
